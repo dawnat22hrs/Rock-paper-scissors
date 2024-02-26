@@ -1,0 +1,70 @@
+@import 'src/style/variables.scss';
+
+.header {
+    width: 100vw;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+
+    
+    .score {
+        width: 600px;
+        height: 150px;
+        border: 2px solid $light-purple-blue;
+        border-radius: 20px;
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 30px;
+
+        .title-wrapper {
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: .8px;
+            text-transform: uppercase;
+            color: $white100;
+            width: 100px;
+
+            h3 {
+                margin: 0;
+                font-family: Anta;
+            }
+        }
+
+        .current-score-block {
+            width: 100px;
+            height: 90px;
+            background-color: $white100;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 10px;
+            justify-content: space-between;
+
+            .title {
+                background: none;
+                color: $denim-blue;
+                font-size: 20px;
+                font-weight: 500;
+            }
+
+            .currnet-scoore {
+                color: $night-blue;
+                background: none;
+                font-size: 50px;
+                font-weight: 700;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    .score {
+        margin: 0;
+    }
+}

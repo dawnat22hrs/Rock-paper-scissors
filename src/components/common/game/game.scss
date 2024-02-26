@@ -1,0 +1,43 @@
+@import 'src/style/variables.scss';
+
+.game {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 700px;
+    height: 70vh;
+
+    .fingering-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 250px;
+
+        .title {
+            color: $white100;
+            font-weight: 400;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+
+        .shadow {
+            box-shadow: 0 5px 10px 5px $light-purple-blue50
+        }
+
+        .rotate {
+            transform: rotate(0);
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .game {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 200px;
+        height: 60vh;
+    }
+}

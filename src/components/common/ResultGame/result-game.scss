@@ -1,0 +1,33 @@
+@import 'src/style/variables.scss';
+
+.wrapper {
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  .title-block {
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .result {
+      color: $white100;
+      font-weight: 600;
+      font-size: 25px;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and  (max-width: 450px) {
+  .title-block, .btn, .result {
+    display: none;
+  }
+
+  .wrapper {
+    background: none;
+  }
+}

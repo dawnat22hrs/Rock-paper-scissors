@@ -1,0 +1,74 @@
+.wrapper {
+  position: relative;
+  top: 100px;
+
+  .background {
+    position: absolute;
+  }
+}
+
+@mixin distribute-on-circle( $nb-items, $circle-size, $item-size) {
+  $half-item: ($item-size / 2);
+  $half-parent: ($circle-size / 2);
+  position: relative;
+  width: $circle-size;
+  height: $circle-size;
+  padding: 0;
+  border-radius: 50%;
+  list-style: none;
+  box-sizing: content-box;
+  > * {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $item-size;
+    height: $item-size;
+    margin: -$half-item;
+  }
+  $angle: (360 / $nb-items);
+  $rot: 0;
+  @for $i from 1 through $nb-items {
+    >:nth-of-type(#{$i}) {
+      transform: rotate($rot * 1deg) translate($half-parent) rotate($rot * -1deg);
+    }
+    $rot: ($rot + $angle);
+  }
+}
+
+  .advantages-circle {
+    @include distribute-on-circle(3, 20em, 6em);
+    background: none;
+    transform: rotate(90deg);
+    position: relative;
+    left: 25px;
+    bottom: 10px;
+  }
+
+.advantages-circle__bonus {
+  @include distribute-on-circle(5, 20em, 6em);
+  background: none;
+  transform: rotate(-90deg);
+  position: relative;
+  top: 110px;
+  right: 30px;
+}
+
+@media screen and (max-width: 450px){
+  .background {
+    display: none;
+  }
+
+  .advantages-circle {
+    @include distribute-on-circle(3, 10em, 3em);
+    background: none;
+    transform: rotate(90deg);
+  }
+
+  .advantages-circle__bonus {
+    @include distribute-on-circle(5, 15em, 3em);
+    background: none;
+    position: relative;
+  }
+}
+

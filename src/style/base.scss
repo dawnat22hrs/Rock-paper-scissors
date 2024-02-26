@@ -1,0 +1,48 @@
+@import './variables.scss';
+
+* {
+    background-color: $night-blue;
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.info {
+    position: absolute;
+    right: 30px;
+    bottom: 40px;
+    display: flex;
+    align-items: end;
+
+    .button-block {
+        width: 150px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.none {
+    display: none;
+}
+
+@media screen and (max-width: 450px) {
+    .none {
+        display: block;
+    }
+
+    .rule {
+        position: absolute;
+        right: 10px;
+        bottom: 300px;
+    }
+}
+
